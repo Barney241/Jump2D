@@ -4,6 +4,8 @@
 
 A fast-paced 2D platformer where you run, jump, and shoot your way through challenging levels filled with enemies and obstacles.
 
+![Game Preview](images/01.png)
+
 ## 🎮 Game Features
 
 - **Fluid Movement**: Run and jump with responsive, physics-based controls
