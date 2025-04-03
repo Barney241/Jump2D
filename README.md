@@ -17,7 +17,7 @@ A fast-paced 2D platformer where you run, jump, and shoot your way through chall
 
 - **←/→**: Move left/right
 - **↑**: Jump
-- **Fire**: Shoot fireballs at enemies
+- **Space/Left Click**: Shoot fireballs at enemies
 - **Esc**: Pause game
 
 ## 🏆 Scoring
@@ -28,16 +28,13 @@ Defeat enemies to earn points! More challenging enemies reward higher scores.
 
 1. Download the latest release from the releases page
 2. Extract the files to your preferred location
-3. Run `plosinovka.exe` (Windows) or the appropriate executable for your platform
+3. Run `jump2D.exe` (Windows) or the appropriate executable for your platform
 
-## 🛠️ Development
+## NixOS
+```bash
+steam-run ./jump2D.x86_64
+```
 
-Jump2D is built with the Godot Engine. To contribute or modify:
-
-1. Clone this repository
-2. Open the project in Godot Engine
-3. Make your changes
-4. Submit a pull request
 
 ## 📜 License
 

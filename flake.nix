@@ -26,6 +26,7 @@
             # This is your devenv configuration
             packages = [
               pkgs.godot3
+              pkgs.steam-run
             ];
           })
         ];
