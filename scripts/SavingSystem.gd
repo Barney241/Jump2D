@@ -13,8 +13,8 @@ var hiest_score
 var current_scene = null
 
 func _ready():
-    var root = get_tree().get_root()
-    current_scene = root.get_child(root.get_child_count() - 1)
+	var root = get_tree().get_root()
+	current_scene = root.get_child(root.get_child_count() - 1)
 	
 func save_game(section, key):
 	config.set_value(section, key, DisplayValue)
@@ -25,12 +25,12 @@ func save_score(section, key):
 	config.save(save_path)
 	
 func load_game(section, key):
-	DisplayValue = config.get_value(section, key, DisplayValue)
+	DisplayValue = config.get_value(section, key, "res://worlds/world_00.tscn")
 	get_tree().change_scene(DisplayValue)
 	get_tree().get_current_scene().get_name()
 	
 func load_score(section, key):
-	hiest_score = config.get_value(section, key, DisplayValue)
+	hiest_score = config.get_value(section, key, 0)
 	Global.hiest_score = hiest_score
 
 

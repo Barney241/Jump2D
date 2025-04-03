@@ -11,9 +11,7 @@
 [ext_resource path="res://scenes/Moving platform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/NextLvl.tscn" type="PackedScene" id=10]
 
-[node name="world_00" type="Node" groups=[
-"save",
-]]
+[node name="world_00" type="Node" groups=["save"]]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 169.619, 347.747 )
@@ -41,9 +39,7 @@ __meta__ = {
 [node name="Area2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1000, 1000 )
 
-[node name="Enemy" type="Node" parent="." groups=[
-"save",
-]]
+[node name="Enemy" type="Node" parent="." groups=["save"]]
 
 [node name="Enemy_0" parent="Enemy" instance=ExtResource( 8 )]
 position = Vector2( 672, 352 )
@@ -66,7 +62,7 @@ hp = 5
 [node name="Enemy_3" parent="Enemy" instance=ExtResource( 8 )]
 position = Vector2( 928, 32 )
 speed = 100
-hp = 5
+hp = 3
 
 [node name="Enemy_4" parent="Enemy" instance=ExtResource( 8 )]
 position = Vector2( 608, -224 )
@@ -76,22 +72,22 @@ hp = 4
 [node name="Enemy_5" parent="Enemy" instance=ExtResource( 8 )]
 position = Vector2( 1792, -288 )
 speed = 100
-hp = 6
+hp = 3
 
 [node name="Enemy_6" parent="Enemy" instance=ExtResource( 8 )]
 position = Vector2( 2272, 416 )
 speed = 150
-hp = 5
+hp = 3
 
 [node name="Enemy_7" parent="Enemy" instance=ExtResource( 8 )]
 position = Vector2( 2144, 32 )
 speed = 150
-hp = 7
+hp = 3
 
 [node name="Enemy_9" parent="Enemy" instance=ExtResource( 8 )]
 position = Vector2( 2240, -96 )
 speed = 150
-hp = 7
+hp = 3
 
 [node name="Enemy_10" parent="Enemy" instance=ExtResource( 8 )]
 position = Vector2( 2912, -32 )
@@ -105,7 +101,6 @@ hp = 25
 size = Vector2( 5, 5 )
 
 [node name="Platforms" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="platform_0" parent="Platforms" instance=ExtResource( 9 )]
 position = Vector2( 1408, -192 )

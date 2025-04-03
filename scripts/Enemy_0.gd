@@ -73,7 +73,7 @@ func _physics_process(delta):
 				get_slide_collision(i).collider.dead()
 	
 	
-        
+		
 	
 
 func _on_Timer_timeout():

@@ -14,7 +14,7 @@
 [node name="world_03" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 459.906, 480.23 )
+position = Vector2( 373, 518 )
 
 [node name="Border" parent="." instance=ExtResource( 2 )]
 

@@ -41,8 +41,9 @@ align = 1
 margin_top = 56.0
 margin_right = 167.0
 margin_bottom = 98.0
-text = "Ukončit"
+text = "Quit"
 
 [node name="SaveSystem" parent="Pause" instance=ExtResource( 3 )]
+
 [connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/CheckBox" to="Pause" method="_on_CheckBox_pressed"]
 [connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/Konec" to="Pause" method="_on_Konec_pressed"]

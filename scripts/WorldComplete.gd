@@ -40,8 +40,8 @@ func set_Nextlvl():
 	
 	get_node("SaveSystem").hiest_score = Global.hiest_score
 	get_node("SaveSystem").save_score("Score", current_s)
-	$NextLvl/Control/CenterContainer/VBoxContainer/Actual_score.text = "Aktuální skóre: " + String(Global.total_score)
-	$NextLvl/Control/CenterContainer/VBoxContainer/hiest_score.text = "Nejvyšší skóre: " + String(Global.hiest_score)
+	$NextLvl/Control/CenterContainer/VBoxContainer/Actual_score.text = "Current score: " + String(Global.total_score)
+	$NextLvl/Control/CenterContainer/VBoxContainer/hiest_score.text = "Highest score: " + String(Global.hiest_score)
 	
 
 func _on_WorldComplete_body_entered(body):

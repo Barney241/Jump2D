@@ -53,5 +53,6 @@ margin_bottom = 104.0
 text = "Restart level"
 
 [node name="SaveSystem" parent="Control" instance=ExtResource( 2 )]
+
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/next_lvl" to="Control" method="_on_next_lvl_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/restart_lvl" to="Control" method="_on_restart_lvl_pressed"]

@@ -14,7 +14,7 @@
 [node name="world_03" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 106.03, 591.951 )
+position = Vector2( 138, 587 )
 
 [node name="Border" parent="." instance=ExtResource( 2 )]
 
@@ -42,7 +42,6 @@ move_to = Vector2( 500, -300 )
 speed = 10.0
 
 [node name="Enemy" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Enemy_0" parent="Enemy" instance=ExtResource( 7 )]
 position = Vector2( 613.171, 1440.76 )
@@ -54,6 +53,7 @@ score_plus = 250
 position = Vector2( 408.116, 2201.52 )
 speed = 100
 hp = 5
+size = Vector2( 0.75, 0.75 )
 
 [node name="Enemy_2" parent="Enemy" instance=ExtResource( 7 )]
 position = Vector2( 1532.06, 1815.71 )

@@ -17,24 +17,24 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Dead",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
@@ -65,8 +65,6 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-drag_margin_h_enabled = false
-drag_margin_v_enabled = false
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 40, 12 )
@@ -79,9 +77,22 @@ margin_left = -486.0
 margin_top = -284.0
 margin_right = -245.0
 margin_bottom = -242.0
-custom_styles/normal = SubResource( 3 )
 custom_fonts/normal_font = ExtResource( 12 )
+custom_styles/normal = SubResource( 3 )
 text = "Score"
+
+[node name="Hint" type="RichTextLabel" parent="."]
+margin_left = -501.0
+margin_top = -239.0
+margin_right = -243.0
+margin_bottom = -135.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "
+    left/right: Move left/right
+    up: Jump
+    Space/Left Click: Shoot fireball
+    Esc: Pause game
+"
 
 [node name="UpdateScore" type="Timer" parent="."]
 process_mode = 0
@@ -103,5 +114,6 @@ texture = ExtResource( 13 )
 centered = false
 
 [node name="SaveSystem" parent="." instance=ExtResource( 14 )]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="UpdateScore" to="." method="_on_UpdateScore_timeout"]
