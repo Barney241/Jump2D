@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/turret-sprites-deployment.png-651f24226a5bb427d8c5b58768fe43a7.image"
+
+[deps]
+
+source_file="res://Sprites/PNG/Enemies/turret/turret-sprites-deployment.png"
+dest_files=[ "res://.import/turret-sprites-deployment.png-651f24226a5bb427d8c5b58768fe43a7.image" ]
+
+[params]
+

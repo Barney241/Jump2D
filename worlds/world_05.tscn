@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://border.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Music.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/WorldComplete.tscn" type="PackedScene" id=4]
+[ext_resource path="res://DirtAuto.tres" type="TileSet" id=5]
+[ext_resource path="res://scenes/Moving platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/ShootingEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/NextLvl.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Pause.tscn" type="PackedScene" id=10]
+
+[node name="world_03" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 459.906, 480.23 )
+
+[node name="Border" parent="." instance=ExtResource( 2 )]
+
+[node name="Music" parent="." instance=ExtResource( 3 )]
+
+[node name="WorldComplete" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1425.71, 2317.94 )
+next_world = "res://worlds/world_00.tscn"
+world = "res://worlds/world_04.tscn"
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -5.87268, -16 )
+tile_set = ExtResource( 5 )
+format = 1
+tile_data = PoolIntArray( 196608, 0, 5, 262144, 0, 65541, 327680, 0, 65541, 393216, 0, 65541, 458752, 0, 65541, 524288, 0, 65541, 524299, 0, 196613, 524302, 0, 196613, 589824, 0, 65542, 589825, 0, 196609, 589826, 0, 196609, 589827, 0, 196609, 589828, 0, 196609, 589829, 0, 196609, 589830, 0, 196609, 589831, 0, 196609, 589832, 0, 7, 589841, 0, 6, 589842, 0, 196609, 589843, 0, 196609, 589844, 0, 196609, 589845, 0, 7, 589849, 0, 196613, 589853, 0, 6, 589854, 0, 196609, 589855, 0, 196609, 589856, 0, 196609, 589857, 0, 196610, 655368, 0, 65541, 655377, 0, 65541, 655381, 0, 65541, 655389, 0, 65541, 720904, 0, 65542, 720905, 0, 196609, 720906, 0, 196609, 720907, 0, 196609, 720908, 0, 196609, 720909, 0, 196609, 720910, 0, 196609, 720911, 0, 196609, 720912, 0, 196609, 720913, 0, 65543, 720917, 0, 65542, 720918, 0, 196609, 720919, 0, 196609, 720920, 0, 196609, 720921, 0, 196609, 720922, 0, 196609, 720923, 0, 196609, 720924, 0, 196609, 720925, 0, 65543, 1114190, 0, 196613, 1245260, 0, 196613, 1376324, 0, 196608, 1376325, 0, 196609, 1376326, 0, 196609, 1376327, 0, 196609, 1376328, 0, 196609, 1376329, 0, 196609, 1376330, 0, 196610 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="platforms" type="Node" parent="."]
+
+[node name="platform_0" parent="platforms" instance=ExtResource( 6 )]
+position = Vector2( 865.636, 2086.98 )
+move_to = Vector2( 500, -300 )
+speed = 10.0
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="Enemy_0" parent="Enemy" instance=ExtResource( 7 )]
+position = Vector2( 683.988, 2219.74 )
+speed = 100
+hp = 2
+score_plus = 250
+
+[node name="EnemyTurret_1" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 1186.94, 2247.87 )
+hp = 10
+cooldown = 1.5
+
+[node name="NextLvl" parent="." instance=ExtResource( 9 )]
+
+[node name="Pause" parent="." instance=ExtResource( 10 )]

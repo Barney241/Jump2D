@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/ShootingEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/PNG/Enemies/turret/turret.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/PNG/Enemies/turret/turret_dead.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/PNG/Enemies/turret/turret_hit.png" type="Texture" id=4]
+
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "shooting",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31, 20 )
+
+[node name="EnemyTurret_0" type="KinematicBody2D"]
+position = Vector2( 246, 193 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -59.1494, -24.3113 )
+rotation = 3.14159
+scale = Vector2( 2.94333, -1.76053 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( -120, -35 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -59, -25 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="hit" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="shoot" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="hit" to="." method="_on_hit_timeout"]
+[connection signal="timeout" from="shoot" to="." method="_on_shoot_timeout"]

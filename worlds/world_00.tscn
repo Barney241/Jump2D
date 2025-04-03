@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Pause.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/WorldComplete.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/SaveSystem.tscn" type="PackedScene" id=4]
+[ext_resource path="res://DirtAuto.tres" type="TileSet" id=5]
+[ext_resource path="res://scenes/Music.tscn" type="PackedScene" id=6]
+[ext_resource path="res://border.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Moving platform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/NextLvl.tscn" type="PackedScene" id=10]
+
+[node name="world_00" type="Node" groups=[
+"save",
+]]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 169.619, 347.747 )
+
+[node name="Control" parent="." instance=ExtResource( 2 )]
+
+[node name="WorldComplete" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3200, -32 )
+next_world = "res://worlds/world_02.tscn"
+world = "res://worlds/world_00.tscn"
+
+[node name="SaveSystem" parent="." instance=ExtResource( 4 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_quadrant_size = 1
+format = 1
+tile_data = PoolIntArray( -655344, 0, 6, -655343, 0, 196609, -655342, 0, 196609, -655341, 0, 196609, -655340, 0, 196609, -655339, 0, 196609, -655338, 0, 196609, -655337, 0, 196609, -655336, 0, 196609, -655335, 0, 196609, -655334, 0, 196609, -655333, 0, 7, -655324, 0, 6, -655323, 0, 196609, -655322, 0, 196609, -655321, 0, 196609, -655320, 0, 196609, -655319, 0, 196609, -655318, 0, 196609, -655317, 0, 196609, -655316, 0, 196609, -655315, 0, 196609, -655314, 0, 196609, -655313, 0, 196609, -655312, 0, 196609, -655311, 0, 196609, -655310, 0, 196609, -655309, 0, 196609, -655308, 0, 196609, -655307, 0, 196609, -655306, 0, 7, -589814, 0, 6, -589813, 0, 196609, -589812, 0, 196609, -589811, 0, 196609, -589810, 0, 196609, -589809, 0, 196609, -589808, 0, 65543, -589797, 0, 65542, -589796, 0, 196609, -589795, 0, 196609, -589794, 0, 196609, -589793, 0, 196609, -589792, 0, 7, -589788, 0, 65541, -589770, 0, 65541, -524279, 0, 6, -524278, 0, 65543, -524256, 0, 65542, -524255, 0, 196609, -524254, 0, 196609, -524253, 0, 196609, -524252, 0, 196612, -524234, 0, 65541, -458743, 0, 65541, -458737, 0, 196613, -458716, 0, 65541, -458698, 0, 65542, -458697, 0, 196609, -458696, 0, 196609, -458695, 0, 7, -393208, 0, 6, -393207, 0, 65543, -393202, 0, 196613, -393198, 0, 196613, -393196, 0, 196613, -393180, 0, 65541, -393177, 0, 196613, -393172, 0, 196613, -393169, 0, 5, -393159, 0, 65541, -327673, 0, 6, -327672, 0, 65543, -327667, 0, 196613, -327649, 0, 5, -327644, 0, 65541, -327633, 0, 65541, -327631, 0, 5, -327623, 0, 65541, -262137, 0, 65541, -262133, 0, 196608, -262132, 0, 7, -262125, 0, 5, -262117, 0, 196608, -262116, 0, 196609, -262115, 0, 196609, -262114, 0, 196609, -262113, 0, 131083, -262112, 0, 196609, -262111, 0, 196609, -262110, 0, 7, -262108, 0, 65541, -262103, 0, 196613, -262097, 0, 65541, -262095, 0, 65541, -262087, 0, 65541, -196601, 0, 65541, -196599, 0, 196613, -196596, 0, 65542, -196595, 0, 196609, -196594, 0, 196609, -196593, 0, 196609, -196592, 0, 196609, -196591, 0, 196609, -196590, 0, 196609, -196589, 0, 196612, -196577, 0, 65541, -196574, 0, 131077, -196572, 0, 65541, -196565, 0, 196613, -196561, 0, 131075, -196560, 0, 196609, -196559, 0, 196611, -196558, 0, 196609, -196557, 0, 196609, -196556, 0, 196609, -196555, 0, 196609, -196554, 0, 196610, -196552, 0, 6, -196551, 0, 65543, -131065, 0, 65541, -131053, 0, 65541, -131041, 0, 65541, -131036, 0, 65541, -131026, 0, 196608, -131025, 0, 196612, -131016, 0, 65541, -65529, 0, 8, -65528, 0, 9, -65527, 0, 196609, -65526, 0, 196610, -65517, 0, 65541, -65505, 0, 65541, -65503, 0, 196608, -65502, 0, 196609, -65501, 0, 196609, -65500, 0, 196612, -65489, 0, 65541, -65480, 0, 65541, 1, 0, 6, 2, 0, 196609, 3, 0, 196609, 4, 0, 196609, 5, 0, 196609, 6, 0, 196609, 7, 0, 65544, 8, 0, 65545, 12, 0, 196613, 19, 0, 65541, 31, 0, 65541, 36, 0, 65541, 45, 0, 6, 46, 0, 196609, 47, 0, 196611, 48, 0, 196609, 49, 0, 196609, 50, 0, 196609, 51, 0, 196609, 52, 0, 196609, 53, 0, 196609, 54, 0, 196609, 55, 0, 196609, 56, 0, 65543, 65537, 0, 65541, 65544, 0, 65541, 65550, 0, 196613, 65555, 0, 65541, 65567, 0, 131075, 65568, 0, 196609, 65569, 0, 196609, 65570, 0, 196610, 65572, 0, 65541, 65578, 0, 196613, 65581, 0, 65541, 196606, 0, 196608, 196607, 0, 196609, 131072, 0, 196609, 131073, 0, 196612, 131080, 0, 65541, 131088, 0, 196613, 131091, 0, 65541, 131103, 0, 65541, 131108, 0, 65541, 131117, 0, 65541, 196609, 0, 65541, 196616, 0, 65541, 196618, 0, 5, 196627, 0, 65541, 196639, 0, 65541, 196641, 0, 196608, 196642, 0, 196609, 196643, 0, 196609, 196644, 0, 196612, 196648, 0, 196613, 196653, 0, 65541, 262145, 0, 65541, 262148, 0, 6, 262149, 0, 196609, 262150, 0, 196610, 262152, 0, 131075, 262153, 0, 196609, 262154, 0, 65543, 262157, 0, 6, 262158, 0, 196609, 262159, 0, 196609, 262160, 0, 196609, 262161, 0, 196609, 262162, 0, 196609, 262163, 0, 65543, 262175, 0, 65541, 262180, 0, 65541, 262189, 0, 65541, 327681, 0, 65541, 327684, 0, 65541, 327688, 0, 131077, 327693, 0, 65541, 327711, 0, 65542, 327712, 0, 196609, 327713, 0, 196609, 327714, 0, 7, 327716, 0, 131077, 327718, 0, 5, 327725, 0, 65541, 393217, 0, 65542, 393218, 0, 196609, 393219, 0, 196609, 393220, 0, 196612, 393226, 0, 196608, 393227, 0, 196610, 393229, 0, 65541, 393250, 0, 65541, 393254, 0, 65541, 393261, 0, 65541, 458756, 0, 65541, 458765, 0, 65541, 458786, 0, 65542, 458787, 0, 196609, 458788, 0, 196609, 458789, 0, 196609, 458790, 0, 65543, 458797, 0, 131077, 524292, 0, 65542, 524293, 0, 196609, 524294, 0, 196609, 524295, 0, 196609, 524296, 0, 196609, 524297, 0, 196609, 524298, 0, 196609, 524299, 0, 196609, 524300, 0, 196609, 524301, 0, 65543 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Music" parent="." instance=ExtResource( 6 )]
+
+[node name="Area2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( -1000, 1000 )
+
+[node name="Enemy" type="Node" parent="." groups=[
+"save",
+]]
+
+[node name="Enemy_0" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 672, 352 )
+hp = 5
+size = Vector2( 2, 1 )
+
+[node name="Enemy_11" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 672, 160 )
+hp = 5
+
+[node name="Enemy_1" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 1312, -416 )
+hp = 4
+
+[node name="Enemy_2" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 928, 224 )
+speed = 100
+hp = 5
+
+[node name="Enemy_3" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 928, 32 )
+speed = 100
+hp = 5
+
+[node name="Enemy_4" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 608, -224 )
+speed = 100
+hp = 4
+
+[node name="Enemy_5" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 1792, -288 )
+speed = 100
+hp = 6
+
+[node name="Enemy_6" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 2272, 416 )
+speed = 150
+hp = 5
+
+[node name="Enemy_7" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 2144, 32 )
+speed = 150
+hp = 7
+
+[node name="Enemy_9" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 2240, -96 )
+speed = 150
+hp = 7
+
+[node name="Enemy_10" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 2912, -32 )
+speed = 150
+hp = 7
+
+[node name="Enemy_8" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 3392, -225.5 )
+speed = 75
+hp = 25
+size = Vector2( 5, 5 )
+
+[node name="Platforms" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="platform_0" parent="Platforms" instance=ExtResource( 9 )]
+position = Vector2( 1408, -192 )
+move_to = Vector2( 0, 512 )
+speed = 8.0
+
+[node name="platform_1" parent="Platforms" instance=ExtResource( 9 )]
+position = Vector2( 1632, 290 )
+move_to = Vector2( 0, -530 )
+speed = 8.0
+
+[node name="NextLvl" parent="." instance=ExtResource( 10 )]

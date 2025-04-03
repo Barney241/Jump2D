@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/hranice.gd" type="Script" id=1]
+
+
+
+
+[node name="Border" type="Area2D"]
+position = Vector2( -1000, 3000 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -39.6404, 0 )
+scale = Vector2( 2.23876, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, 244.834, 100000, 244.834, 4000, 244.834, 1902.43, 244.834, 1902.43, 244.834 )

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Moving platform.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/PNG/Ground/Grass/grass.png" type="Texture" id=2]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+custom_solver_bias = 1.0
+extents = Vector2( 64, 16 )
+
+[node name="platform_0" type="Node2D"]
+script = ExtResource( 1 )
+move_to = Vector2( 200, 0 )
+
+[node name="Platform" type="KinematicBody2D" parent="."]
+position = Vector2( 0, -32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Platform"]
+position = Vector2( 1.90735e-006, 16 )
+scale = Vector2( 1, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2( 0, 16 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="MoveTween" type="Tween" parent="."]
+repeat = true
+playback_process_mode = 0
+playback/repeat = true
