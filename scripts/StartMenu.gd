@@ -17,3 +17,7 @@ func _on_OptionButton_pressed():
 
 func _on_NewGame_pressed():
 	get_tree().change_scene("res://worlds/world_00.tscn")
+
+
+func _on_Statistics_pressed():
+	get_tree().change_scene("res://scenes/Statistics.tscn")

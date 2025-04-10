@@ -36,5 +36,6 @@ margin_left = 98.0
 margin_right = 140.0
 margin_bottom = 24.0
 text = "Back"
+
 [connection signal="pressed" from="CenterContainer/HBoxContainer/CheckBox" to="." method="_on_CheckBox_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

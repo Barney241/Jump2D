@@ -18,9 +18,9 @@ theme = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 362.0
-margin_top = 158.0
+margin_top = 127.0
 margin_right = 662.0
-margin_bottom = 442.0
+margin_bottom = 473.0
 size_flags_horizontal = 5
 custom_constants/separation = 20
 
@@ -53,24 +53,41 @@ margin_right = 300.0
 margin_bottom = 160.0
 text = "New Game"
 
-[node name="OptionButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Statistics" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 180.0
 margin_right = 300.0
 margin_bottom = 222.0
+text = "Statistics"
+
+[node name="OptionButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 242.0
+margin_right = 300.0
+margin_bottom = 284.0
 action_mode = 0
 text = "Settings"
 clip_text = true
 
 [node name="QuitGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 242.0
+margin_top = 304.0
 margin_right = 300.0
-margin_bottom = 284.0
+margin_bottom = 346.0
 text = "Quit"
 clip_text = true
 
 [node name="Music" parent="." instance=ExtResource( 4 )]
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 4.0
+margin_top = 548.0
+margin_right = 243.0
+margin_bottom = 597.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "PGRF2 - Semester project
+Author: Pavel Adamek
+Last Modified: 10.4.2025"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Continue" to="." method="_on_StartGameButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Statistics" to="." method="_on_Statistics_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/OptionButton" to="." method="_on_OptionButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]

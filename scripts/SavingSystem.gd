@@ -32,6 +32,17 @@ func load_game(section, key):
 func load_score(section, key):
 	hiest_score = config.get_value(section, key, 0)
 	Global.hiest_score = hiest_score
+	
+func get_lvl_highest_score(level_id):
+	return config.get_value("Score", level_id, 0)
+
+func get_completed_levels() -> Array:
+	"""Returns an array of strings containing the IDs of all completed levels."""
+	if not config.has_section("Score"):
+		return [] # Return empty array if the section doesn't exist
+	# Get all keys within the "CompletedLevels" section
+	var completed_ids = config.get_section_keys("Score")
+	return completed_ids
 
 
 #func save():
